@@ -1,0 +1,5 @@
+# This file is managed by Puppet. DO NOT EDIT.
+
+<%= @paths.join("\n") %> {
+<%= scope.call_function('template', ['logrotate/directives.erb']).strip().gsub(/^/, "  ") %>
+}

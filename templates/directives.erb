@@ -1,0 +1,144 @@
+<%- if @rotate_period -%>
+<%= @rotate_period %>
+<%- end -%>
+<%- if not @compress.nil? -%>
+<%= scope.call_function('bool2str', [@compress, "compress", "nocompress"]) %>
+<%- end -%>
+<%- if not @compresscmd.nil? -%>
+compresscmd <%= @compresscmd %>
+<%- end -%>
+<%- if not @uncompresscmd.nil? -%>
+uncompresscmd <%= @uncompresscmd %>
+<%- end -%>
+<%- if not @compressext.nil? -%>
+compressext <%= @compressext %>
+<%- end -%>
+<%- if not @compressoptions.nil? -%>
+compressoptions <%= @compressoptions %>
+<%- end -%>
+<%- if not @copy.nil? -%>
+<%= scope.call_function('bool2str', [@copy, "copy", "nocopy"]) %>
+<%- end -%>
+<%- if not @copytruncate.nil? -%>
+<%= scope.call_function('bool2str', [@copytruncate, "copytruncate", "nocopytruncate"]) %>
+<%- end -%>
+<%- if not @create.nil? -%>
+<%= scope.call_function('bool2str', [@create, "create #{@create_options}", "nocreate"]) %>
+<%- end -%>
+<%- if not @createolddir.nil? -%>
+<%= scope.call_function('bool2str', [@createolddir, "createolddir #{@createolddir_options}", "nocreateolddir"]) %>
+<%- end -%>
+<%- if not @dateext.nil? -%>
+<%= scope.call_function('bool2str', [@dateext, "dateext", "nodateext"]) %>
+<%- end -%>
+<%- if @dateformat -%>
+dateformat <%= @dateformat %>
+<%- end -%>
+<%- if @dateyesterday -%>
+dateyesterday
+<%- end -%>
+<%- if not @delaycompress.nil? -%>
+<%= scope.call_function('bool2str', [@delaycompress, "delaycompress", "nodelaycompress"]) %>
+<%- end -%>
+<%- if @extension -%>
+extension <%= @extension %>
+<%- end -%>
+<%- if @addextension -%>
+addextension <%= @addextension %>
+<%- end -%>
+<%- if not @ifempty.nil? -%>
+<%= scope.call_function('bool2str', [@ifempty, "ifempty", "notifempty"]) %>
+<%- end -%>
+<%- if not @mail.nil? -%>
+<%= scope.call_function('bool2str', [@mail, "mail #{@mail_address}", "nomail"]) %>
+<%- end -%>
+<%- if @mailfirst -%>
+mailfirst
+<%- end -%>
+<%- if @maillast -%>
+maillast
+<%- end -%>
+<%- if @minage -%>
+minage <%= @minage %>
+<%- end -%>
+<%- if @maxage -%>
+maxage <%= @maxage %>
+<%- end -%>
+<%- if @minsize -%>
+minsize <%= @minsize %>
+<%- end -%>
+<%- if @maxsize -%>
+maxsize <%= @maxsize %>
+<%- end -%>
+<%- if not @missingok.nil? -%>
+<%= scope.call_function('bool2str', [@missingok, "missingok", "nomissingok"]) %>
+<%- end -%>
+<%- if not @olddir.nil? -%>
+  <%- if @olddir -%>
+olddir <%= @olddir %>
+  <%- else -%>
+noolddir
+  <%- end -%>
+<%- end -%>
+<%- if not @rotate.nil? -%>
+rotate <%= @rotate %>
+<%- end -%>
+<%- if @renamecopy -%>
+renamecopy <%= @renamecopy %>
+<%- end -%>
+<%- if @size -%>
+size <%= @size %>
+<%- end -%>
+<%- if not @sharedscripts.nil? -%>
+<%= scope.call_function('bool2str', [@sharedscripts, "sharedscripts", "nosharedscripts"]) %>
+<%- end -%>
+<%- if not @shred.nil? -%>
+<%= scope.call_function('bool2str', [@shred, "shred", "noshred"]) %>
+<%- end -%>
+<%- if @shredcycles -%>
+shredcycles <%= @shredcycles %>
+<%- end -%>
+<%- if @start -%>
+start <%= @start %>
+<%- end -%>
+<%- if @su -%>
+su <%= @su_options %>
+<%- end -%>
+<%- if not @firstaction.nil? -%>
+firstaction
+  <%- @firstaction.each do |script| %>
+  <%= script %>
+  <%- end -%>
+endscript
+<%- end -%>
+<%- if not @lastaction.nil? -%>
+lastaction
+  <%- @lastaction.each do |script| %>
+  <%= script %>
+  <%- end -%>
+endscript
+<%- end -%>
+<%- if not @prerotate.nil? -%>
+prerotate
+  <%- @prerotate.each do |script| -%>
+  <%= script %>
+  <%- end -%>
+endscript
+<%- end -%>
+<%- if not @postrotate.nil? -%>
+postrotate
+  <%- @postrotate.each do |script| -%>
+  <%= script %>
+  <%- end -%>
+endscript
+<%- end -%>
+<%- if not @preremove.nil? -%>
+preremove
+  <%- @preremove.each do |script| -%>
+  <%= script %>
+  <%- end -%>
+endscript
+<%- end -%>
+<%- if @include %>
+include <%= @include %>
+<%- end -%>
