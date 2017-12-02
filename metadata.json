@@ -1,6 +1,6 @@
 {
   "name": "arcaik-logrotate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Johan Fleury (Arcaik)",
   "summary": "Configuration and management of logrotate",
   "license": "GPL-3.0",
